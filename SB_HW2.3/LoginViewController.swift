@@ -72,20 +72,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordInput.text = ""
     }
     
-    
     // MARK: - Handle keyboard button
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        handleKeyboardReturnButton(textField: textField)
+        return true
+    }
+    
+    func handleKeyboardReturnButton(textField: UITextField){
         switch textField {
         case nameInput:
             passwordInput.becomeFirstResponder()
         case passwordInput:
             performSegue(withIdentifier: "goToWelcome", sender: nil)
-            
         default:
             break
         }
-        return true
     }
 }
 
