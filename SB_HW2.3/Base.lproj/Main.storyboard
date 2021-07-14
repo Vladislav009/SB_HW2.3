@@ -84,31 +84,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k23-Rp-2e3">
-                                <rect key="frame" x="185.66666666666666" y="448.66666666666669" width="57" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avy-Kk-wgU">
-                                <rect key="frame" x="172.66666666666666" y="530" width="83" height="41"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Log Out">
-                                    <color key="titleColor" systemColor="systemTealColor"/>
-                                </state>
-                                <connections>
-                                    <segue destination="gHv-36-Gyw" kind="unwind" unwindAction="unwindFor:" id="hz5-J3-yBq"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="zeP-Nd-9NA">
+                                <rect key="frame" x="70" y="402.33333333333331" width="288" height="121.66666666666669"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k23-Rp-2e3">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="28.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avy-Kk-wgU">
+                                        <rect key="frame" x="0.0" y="80.666666666666686" width="288" height="41"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Log Out">
+                                            <color key="titleColor" systemColor="systemTealColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="gHv-36-Gyw" kind="unwind" unwindAction="unwindFor:" id="hz5-J3-yBq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xnD-zb-u1C"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
-                            <constraint firstItem="avy-Kk-wgU" firstAttribute="centerX" secondItem="xnD-zb-u1C" secondAttribute="centerX" id="2Gx-oq-Gel"/>
-                            <constraint firstItem="k23-Rp-2e3" firstAttribute="centerX" secondItem="Z2z-yz-MYz" secondAttribute="centerX" id="7kU-rq-BZz"/>
-                            <constraint firstItem="k23-Rp-2e3" firstAttribute="centerY" secondItem="Z2z-yz-MYz" secondAttribute="centerY" id="SFY-W0-FZl"/>
-                            <constraint firstItem="avy-Kk-wgU" firstAttribute="top" secondItem="k23-Rp-2e3" secondAttribute="bottom" constant="52.5" id="zEh-45-NuA"/>
+                            <constraint firstItem="zeP-Nd-9NA" firstAttribute="centerX" secondItem="Z2z-yz-MYz" secondAttribute="centerX" id="9ES-Vx-U65"/>
+                            <constraint firstItem="zeP-Nd-9NA" firstAttribute="centerY" secondItem="Z2z-yz-MYz" secondAttribute="centerY" id="grJ-UY-Wte"/>
+                            <constraint firstItem="zeP-Nd-9NA" firstAttribute="leading" secondItem="xnD-zb-u1C" secondAttribute="leading" constant="70" id="n25-Z1-Be2"/>
+                            <constraint firstItem="xnD-zb-u1C" firstAttribute="trailing" secondItem="zeP-Nd-9NA" secondAttribute="trailing" constant="70" id="zNk-Mo-bcy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hi User" id="vg9-jF-Hs4"/>

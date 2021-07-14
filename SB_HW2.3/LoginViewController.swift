@@ -50,12 +50,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func nameInputChanged() {
+        nameInput.returnKeyType = .next
         guard let nameEntry = nameInput.text, !nameEntry.isEmpty else {
             nameInput.enablesReturnKeyAutomatically = true
             return
         }
-        
-        nameInput.returnKeyType = .next
     }
     
     @IBAction func passwordInputChanged() {
