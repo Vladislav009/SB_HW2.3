@@ -35,9 +35,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if let aboutVC = viewController as? AboutViewController {
                 aboutVC.about = user.description
             }
+            
+            if let generalInfoVC = viewController as? GeneralInfoViewController {
+                generalInfoVC.name = user.username
+                generalInfoVC.password = user.password
+                generalInfoVC.age = String(user.age)
+                generalInfoVC.city = user.address
+                
+            }
         }
-        
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -55,21 +61,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         
         performSegue(withIdentifier: "goToWelcome", sender: nil)
-    }
-    
-    @IBAction func nameInputChanged() {
-        nameInput.returnKeyType = .next
-        guard let nameEntry = nameInput.text, !nameEntry.isEmpty else {
-            nameInput.enablesReturnKeyAutomatically = true
-            return
-        }
-    }
-    
-    @IBAction func passwordInputChanged() {
-        guard let passwordEntry = passwordInput.text, !passwordEntry.isEmpty else {
-            passwordInput.enablesReturnKeyAutomatically = true
-            return
-        }
     }
     
     

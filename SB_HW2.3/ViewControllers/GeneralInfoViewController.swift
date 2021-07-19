@@ -9,21 +9,28 @@ import UIKit
 
 class GeneralInfoViewController: UIViewController {
 
+    
+    @IBOutlet weak var nameTF: UILabel!
+    @IBOutlet weak var passwordTF: UILabel!
+    @IBOutlet weak var ageTF: UILabel!
+    @IBOutlet weak var cityTF: UILabel!
+    
+    public var name: String = ""
+    public var password: String = ""
+    public var age: String = ""
+    public var city: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        nameTF.text = name
+        passwordTF.text = password
+        ageTF.text = age
+        cityTF.text = city
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
