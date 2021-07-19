@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0696939126A1AB0A0037A1CB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0696939026A1AB0A0037A1CB /* User.swift */; };
+		06A364DB26A59E300022B5F8 /* GeneralInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A364DA26A59E300022B5F8 /* GeneralInfoViewController.swift */; };
+		06A364DE26A5A0090022B5F8 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A364DD26A5A0090022B5F8 /* AlertView.swift */; };
+		06B7282826A365E000FAF6E0 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B7282726A365E000FAF6E0 /* AboutViewController.swift */; };
 		06DE0CB6269D68A70047A61C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE0CB5269D68A70047A61C /* AppDelegate.swift */; };
 		06DE0CB8269D68A70047A61C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE0CB7269D68A70047A61C /* SceneDelegate.swift */; };
 		06DE0CBA269D68A70047A61C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE0CB9269D68A70047A61C /* LoginViewController.swift */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0696939026A1AB0A0037A1CB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		06A364DA26A59E300022B5F8 /* GeneralInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralInfoViewController.swift; sourceTree = "<group>"; };
+		06A364DD26A5A0090022B5F8 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		06B7282726A365E000FAF6E0 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		06DE0CB2269D68A70047A61C /* SB_HW2.3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SB_HW2.3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DE0CB5269D68A70047A61C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DE0CB7269D68A70047A61C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +47,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0696938C26A1A64A0037A1CB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0696939026A1AB0A0037A1CB /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0696938D26A1A6530037A1CB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				06DE0CB9269D68A70047A61C /* LoginViewController.swift */,
+				06DE0CC9269D7D7F0047A61C /* WelcomeViewController.swift */,
+				06B7282726A365E000FAF6E0 /* AboutViewController.swift */,
+				06A364DA26A59E300022B5F8 /* GeneralInfoViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0696938E26A1A65F0037A1CB /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				06DE0CBB269D68A80047A61C /* Main.storyboard */,
+				06DE0CC0269D68AB0047A61C /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		0696938F26A1A66C0037A1CB /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				06DE0CB5269D68A70047A61C /* AppDelegate.swift */,
+				06DE0CB7269D68A70047A61C /* SceneDelegate.swift */,
+				06DE0CC3269D68AB0047A61C /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		06A364DC26A59FEF0022B5F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				06A364DD26A5A0090022B5F8 /* AlertView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		06DE0CA9269D68A70047A61C = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +112,12 @@
 		06DE0CB4269D68A70047A61C /* SB_HW2.3 */ = {
 			isa = PBXGroup;
 			children = (
-				06DE0CB5269D68A70047A61C /* AppDelegate.swift */,
-				06DE0CB7269D68A70047A61C /* SceneDelegate.swift */,
-				06DE0CB9269D68A70047A61C /* LoginViewController.swift */,
-				06DE0CBB269D68A80047A61C /* Main.storyboard */,
-				06DE0CC9269D7D7F0047A61C /* WelcomeViewController.swift */,
+				06A364DC26A59FEF0022B5F8 /* View */,
+				0696938D26A1A6530037A1CB /* ViewControllers */,
+				0696938C26A1A64A0037A1CB /* Models */,
+				0696938E26A1A65F0037A1CB /* Storyboard */,
+				0696938F26A1A66C0037A1CB /* Config */,
 				06DE0CBE269D68AB0047A61C /* Assets.xcassets */,
-				06DE0CC0269D68AB0047A61C /* LaunchScreen.storyboard */,
-				06DE0CC3269D68AB0047A61C /* Info.plist */,
 			);
 			path = SB_HW2.3;
 			sourceTree = "<group>";
@@ -140,9 +192,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06B7282826A365E000FAF6E0 /* AboutViewController.swift in Sources */,
 				06DE0CBA269D68A70047A61C /* LoginViewController.swift in Sources */,
 				06DE0CCA269D7D7F0047A61C /* WelcomeViewController.swift in Sources */,
 				06DE0CB6269D68A70047A61C /* AppDelegate.swift in Sources */,
+				06A364DB26A59E300022B5F8 /* GeneralInfoViewController.swift in Sources */,
+				06A364DE26A5A0090022B5F8 /* AlertView.swift in Sources */,
+				0696939126A1AB0A0037A1CB /* User.swift in Sources */,
 				06DE0CB8269D68A70047A61C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +348,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RWWSRV5W4R;
-				INFOPLIST_FILE = SB_HW2.3/Info.plist;
+				INFOPLIST_FILE = SB_HW2.3/Config/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,7 +367,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RWWSRV5W4R;
-				INFOPLIST_FILE = SB_HW2.3/Info.plist;
+				INFOPLIST_FILE = SB_HW2.3/Config/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

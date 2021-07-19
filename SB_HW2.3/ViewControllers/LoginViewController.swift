@@ -9,6 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    let user = User.getUser()
+    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
@@ -17,16 +19,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.nameInput.delegate = self
-        self.passwordInput.delegate = self
+        nameInput.delegate = self
+        passwordInput.delegate = self
         
         loginButton.layer.cornerRadius = 10
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
+        let tabBarController = segue.destination as! UITabBarController
+        for viewController in tabBarController.viewControllers! {
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.username = nameInput.text
+            }
+            
+            if let aboutVC = viewController as? AboutViewController {
+                aboutVC.about = user.description
+            }
+        }
         
-        welcomeVC.username = nameInput.text
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -38,15 +49,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Handle UI elements
     
     @IBAction func loginBtnPressed() {
-        guard let inputName = nameInput.text, !inputName.isEmpty else {
-            showAlert(title: "Name field is empty!", message: "Please enter your name")
-            return
+        if nameInput.text != user.username || passwordInput.text != user.password {
+            showAlert(title: "Ooops!", message: "Wrong name or password!")
+            passwordInput.text = ""
         }
         
-        guard let inputPassword = passwordInput.text, !inputPassword.isEmpty else {
-            showAlert(title: "Password field is empty!", message: "Please enter your password")
-            return
-        }
+        performSegue(withIdentifier: "goToWelcome", sender: nil)
     }
     
     @IBAction func nameInputChanged() {
@@ -64,6 +72,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
+    @IBAction func forgotUsernamePressed() {
+        showAlert(title: "Your username 😉", message: "Your username is \(user.username)")
+    }
+    
+    @IBAction func forgotPasswordPressed() {
+        showAlert(title: "Your password 😉", message: "Your password is \(user.password)")
+    }
+    
+    
+    
     // MARK: - Handle segue unwind
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
@@ -74,29 +93,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Handle keyboard button
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        handleKeyboardReturnButton(textField: textField)
+        if textField == nameInput {
+            passwordInput.becomeFirstResponder()
+            return true
+        }
+        
+        loginBtnPressed()
+        
         return true
     }
     
-    func handleKeyboardReturnButton(textField: UITextField){
-        switch textField {
-        case nameInput:
-            passwordInput.becomeFirstResponder()
-        case passwordInput:
-            performSegue(withIdentifier: "goToWelcome", sender: nil)
-        default:
-            break
-        }
-    }
 }
 
 // MARK: - Private methods
 
 extension LoginViewController {
     private func showAlert(title: String, message: String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .cancel)
-        alert.addAction(okAction)
+        let alert = AlertView.generateAlert(title: title, message: message)
         present(alert, animated: true)
     }
 }
